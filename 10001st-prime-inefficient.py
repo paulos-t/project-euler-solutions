@@ -5,9 +5,9 @@ def prime_check(x):
             return False
     return True
 
-i = 17389
+i = 2
 out = []
-while len(out) < 1000:
+while len(out) < 10001:
     if prime_check(i):
         out.append(i)
     i += 1
