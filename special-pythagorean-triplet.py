@@ -1,13 +1,10 @@
 
-import math
-
-def p_triplets(cap):
-    for a in range(1, cap):
-        for b in range(a + 1, cap + 1):
-            c = math.sqrt(a ** 2 + b ** 2)
-            if c % 1 == 0:
-                if a + b + c == 1000:
-                    return int(a * b * c)
+def p_triples():
+    for a in range(1, 332):
+        for b in range(a + 1, 499):
+            c = 1000 - (a + b)
+            if a ** 2 + b ** 2 == c ** 2:
+                return int(a * b * c)
     return 1
 
-print(p_triplets(400))
+print(p_triples())
