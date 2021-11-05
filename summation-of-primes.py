@@ -1,15 +1,16 @@
-from numpy import *
 
 out = []
-nums = list(range(2, 200000))
+nums = list(range(2, 60000))
 def primes(nums, out):
-    if not nums:
-        return out
     out.append(nums[0])
-    indicies = ['a'] * len(nums)
-    for j in indicies:
-        if j % out[-1] == 0:
-            nums.remove(j)
+    last_i = len(nums)
+    i = 0
+    while i < last_i:
+        if nums[i] % out[-1] == 0:
+            nums.remove(nums[i])
+            last_i -= 1
+        else:
+            i += 1
 
 while nums:
     primes(nums, out)
