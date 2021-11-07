@@ -1,6 +1,6 @@
 
 out = []
-nums = list(range(2, 60000))
+nums = list(range(2, 2000000))
 def primes(nums, out):
     out.append(nums[0])
     last_i = len(nums)
