@@ -1,12 +1,6 @@
 
 import math
 
-def t_nums():
-    t_nums = [1]
-    for i in range(2, 11):
-        t_nums.append(i + t_nums[-1])
-    return t_nums
-
 def factors(num):
     factors = []
     test = 1
@@ -19,13 +13,16 @@ def factors(num):
         factors[-1] += 1
     return factors
 
-l = t_nums()
-print(l)
 out = 0
 most_factors = 0
-for i in l:
-    next = factors(i)[-1]
+i = 1
+t_num = 1
+while most_factors < 500:
+    next = factors(t_num)[-1]
     if next > most_factors:
         most_factors = next
-    out = i
-print(f'{out} has {most_factors} factors')
+        out = t_num
+    i += 1
+    t_num += i
+
+print(f'Triangle number {out} has {most_factors} factors.')
