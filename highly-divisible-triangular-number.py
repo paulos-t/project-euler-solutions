@@ -14,13 +14,18 @@ def factors(num):
         if num % test == 0:
             factors.append([test, int(num / test)])
         test += 1
+    factors.append(len(factors) * 2)
     if math.sqrt(num) % 1 == 0:
-        factors.append(len(factors) * 2 + 1)
-    else:
-        factors.append(len(factors) * 2)
+        factors[-1] += 1
     return factors
 
 l = t_nums()
 print(l)
+out = 0
+most_factors = 0
 for i in l:
-    print(factors(i)[-1])
+    next = factors(i)[-1]
+    if next > most_factors:
+        most_factors = next
+    out = i
+print(f'{out} has {most_factors} factors')
