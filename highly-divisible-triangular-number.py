@@ -25,4 +25,4 @@ while most_factors < 500:
     i += 1
     t_num += i
 
-print(f'Triangle number {out} has {most_factors} factors.')
+print("Triangle number %d has %d factors."%(out, most_factors))
